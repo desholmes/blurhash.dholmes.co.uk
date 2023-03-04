@@ -1,0 +1,21 @@
+name: MarketingFeeds-PR-$(BuildID)
+
+trigger:
+  branches:
+    include:
+      - main
+      - feature/*
+      - bugfix/*
+      - hotfix/*
+
+pool:
+  vmImage: "ubuntu-latest"
+
+steps:
+  - template: ado-pipeline-template-npm.yml
+
+  - template: ado-pipeline-template-qa.yml
+
+  - template: ado-pipeline-template-certs-prod.yml
+
+  - template: ado-pipeline-template-build.yml

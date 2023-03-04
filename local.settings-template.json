@@ -1,0 +1,11 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "REPLACE_ME_WITH_STORAGE_ACCOUNT_CONNECTION",
+    "NODE_ENV": "development",
+    "CORS_ALLOWED_DOMAINS": "blurhash.dholmes.co.uk",
+    "CORS_ALLOWED_METHODS": "POST, GET, OPTIONS",
+    "LIMITER_TOKENS": 150,
+    "LIMITER_INTERVAL": "hour"
+  }
+}

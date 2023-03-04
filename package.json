@@ -1,0 +1,31 @@
+{
+  "name": "blurhash.dholmes.co.uk",
+  "version": "1.0.0",
+  "description": "blurhash service",
+  "scripts": {
+    "audit": "npm audit --production --audit-level=critical",
+    "build": "tsc",
+    "watch": "tsc -w",
+    "prestart": "npm run build",
+    "start": "func start",
+    "start:dev": "npm run build && concurrently \"func start\" \"npm run watch\" -k",
+    "lint": "./node_modules/.bin/eslint --max-warnings=0 --ext=ts,json ./",
+    "lint:fix": "./node_modules/.bin/eslint --max-warnings=0 --fix --ext=ts,json ./"
+  },
+  "author": "dholmes.co.uk",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/hapi__joi": "17.1.9",
+    "@types/node": "18.11.19",
+    "@typescript-eslint/eslint-plugin": "5.50.0",
+    "concurrently": "7.6.0",
+    "eslint-config-prettier": "8.6.0",
+    "eslint-plugin-prettier": "4.2.1",
+    "prettier": "2.8.3",
+    "typescript": "4.9.5"
+  },
+  "dependencies": {
+    "@azure/functions": "3.5.0",
+    "limiter": "2.1.0"
+  }
+}
