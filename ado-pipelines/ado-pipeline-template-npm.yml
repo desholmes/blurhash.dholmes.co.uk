@@ -1,8 +1,8 @@
 steps:
   - task: NodeTool@0
-    displayName: "Use Node version v16.18.0"
+    displayName: "Use Node version v18.12.1"
     inputs:
-      versionSpec: 16.18.0
+      versionSpec: 18.12.1
 
   - script: |
       npm i

@@ -15,12 +15,13 @@ steps:
     inputs:
       contents: |
         $(System.DefaultWorkingDirectory)/dist/**
+        $(System.DefaultWorkingDirectory)/views/**
+        $(System.DefaultWorkingDirectory)/static/**
         $(System.DefaultWorkingDirectory)/node_modules/**
-        $(System.DefaultWorkingDirectory)/QtPropertyUpdates/function.json
-        $(System.DefaultWorkingDirectory)/QtRightmove/function.json
-        $(System.DefaultWorkingDirectory)/QtZoopla/function.json
+        $(System.DefaultWorkingDirectory)/home/function.json
+        $(System.DefaultWorkingDirectory)/staticRoute/function.json
+        $(System.DefaultWorkingDirectory)/v1BlurHash/function.json
         $(System.DefaultWorkingDirectory)/v1HeathCheck/function.json
-        $(System.DefaultWorkingDirectory)/v1Property/function.json
         $(System.DefaultWorkingDirectory)/host.json
         $(System.DefaultWorkingDirectory)/package.json
       targetFolder: "$(Build.ArtifactStagingDirectory)"

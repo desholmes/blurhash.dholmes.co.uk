@@ -1,4 +1,4 @@
-name: MarketingFeeds-DEV-TEST-ACC-$(BuildID)
+name: BlurHash-DEV-$(BuildID)
 
 trigger: none
 
@@ -9,7 +9,5 @@ steps:
   - template: ado-pipeline-template-npm.yml
 
   - template: ado-pipeline-template-qa.yml
-
-  - template: ado-pipeline-template-certs-test.yml
 
   - template: ado-pipeline-template-build.yml

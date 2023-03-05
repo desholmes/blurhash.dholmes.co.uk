@@ -12,11 +12,19 @@
     "lint": "./node_modules/.bin/eslint --max-warnings=0 --ext=ts,json ./",
     "lint:fix": "./node_modules/.bin/eslint --max-warnings=0 --fix --ext=ts,json ./"
   },
-  "author": "dholmes.co.uk",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/desholmes/blurhash.dholmes.co.uk"
+  },
+  "author": {
+    "name": "Des Holmes",
+    "url": "https://dholmes.co.uk"
+  },
   "license": "MIT",
   "devDependencies": {
     "@types/hapi__joi": "17.1.9",
     "@types/node": "18.11.19",
+    "@types/pug": "2.0.6",
     "@typescript-eslint/eslint-plugin": "5.50.0",
     "concurrently": "7.6.0",
     "eslint-config-prettier": "8.6.0",
@@ -26,6 +34,10 @@
   },
   "dependencies": {
     "@azure/functions": "3.5.0",
-    "limiter": "2.1.0"
+    "blurhash": "2.0.5",
+    "canvas": "2.11.0",
+    "joi": "17.8.3",
+    "limiter": "2.1.0",
+    "pug": "3.0.2"
   }
 }
