@@ -2,7 +2,7 @@ import { Context } from "@azure/functions";
 
 interface ResponseBody {
   error: boolean;
-  message: string;
+  message?: string;
   data?: unknown;
 }
 
@@ -14,4 +14,5 @@ export const sendResponse = (context: Context, status: number, responseBody: Res
       "Content-Type": "application/json"
     }
   };
+  return;
 };

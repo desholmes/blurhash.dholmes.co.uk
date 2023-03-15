@@ -1,11 +1,14 @@
 {
   "IsEncrypted": false,
   "Values": {
-    "AzureWebJobsStorage": "REPLACE_ME_WITH_STORAGE_ACCOUNT_CONNECTION",
+    "FUNCTIONS_WORKER_RUNTIME": "node",
     "NODE_ENV": "development",
     "CORS_ALLOWED_DOMAINS": "blurhash.dholmes.co.uk",
     "CORS_ALLOWED_METHODS": "POST, GET, OPTIONS",
-    "LIMITER_TOKENS": 150,
-    "LIMITER_INTERVAL": "hour"
+    "LIMITER_TOKENS": 40,
+    "LIMITER_INTERVAL": "hour",
+    "AzureWebJobs.home.Disabled": false,
+    "AzureWebJobs.staticRoute.Disabled": false,
+    "AzureWebJobs.v1HeathCheck.Disabled": false
   }
 }

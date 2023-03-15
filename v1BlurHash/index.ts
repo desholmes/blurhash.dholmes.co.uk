@@ -1,33 +1,43 @@
 import { AzureFunction, Context, HttpRequest } from "@azure/functions";
 
-import { handleOptions, getCorsHeaders, rateLimit, sendResponse, HttpStatusCode } from "../utils";
+import { RequestMethod } from "../constants";
+import {
+  handleOptions,
+  getCorsHeaders,
+  rateLimitExceeded,
+  sendResponse,
+  HttpStatusCode
+} from "../utils";
+import { get } from "./get";
+import { post } from "./post";
 
 const httpTrigger: AzureFunction = async function (
   context: Context,
   req: HttpRequest
 ): Promise<void> {
-  try {
-    context.res["header"] = getCorsHeaders();
-    rateLimit(context);
-    handleOptions(context, req);
-
-    // check for GET request to decode and return image
-
-    // check for POST request to encode and return image
-
-    // sendResponse(context, HttpStatusCode.OK, {
-    //   error: false,
-    //   message: "Property accepted for processing"
-    // });
-    // return;
-  } catch (error) {
-    context.log.error("v1BlurHash: Error", error);
-    sendResponse(context, HttpStatusCode.INTERNAL_SERVER_ERROR, {
-      error: true,
-      message: "There was an error processing the request"
-    });
+  if (await rateLimitExceeded(context)) {
     return;
   }
+  context.res.headers = { ...getCorsHeaders() };
+  handleOptions(context, req);
+
+  // Handle GET requests
+  if (req.method === RequestMethod.GET) {
+    get(context, req);
+    return;
+  }
+
+  // Handle POST requests
+  if (req.method === RequestMethod.POST) {
+    await post(context, req);
+    return;
+  }
+
+  sendResponse(context, HttpStatusCode.NOT_FOUND, {
+    error: true,
+    message: "The resource you requested cannot be found"
+  });
+  return;
 };
 
 export default httpTrigger;

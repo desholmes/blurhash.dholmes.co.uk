@@ -1,17 +1,24 @@
 import { Context } from "@azure/functions";
 import { RateLimiter } from "limiter";
 
-import { HttpStatusCode } from ".";
 import { LIMITER_TOKENS, LIMITER_INTERVAL } from "../constants";
+import { HttpStatusCode } from "./http-codes";
 
-export const rateLimit = async (context: Context) => {
-  const limiter = new RateLimiter({
-    tokensPerInterval: LIMITER_TOKENS,
-    interval: LIMITER_INTERVAL
-  });
-  const remainingRequests = await limiter.removeTokens(1);
-  if (remainingRequests <= 0) {
+const functionName = "utils rateLimit";
+
+const limiter = new RateLimiter({
+  tokensPerInterval: LIMITER_TOKENS,
+  interval: LIMITER_INTERVAL
+});
+
+console.log("Rate limiter set to:", LIMITER_TOKENS, LIMITER_INTERVAL);
+
+export const rateLimitExceeded = async (context: Context): Promise<boolean> => {
+  if (limiter.getTokensRemaining() < 1) {
+    context.log.warn(`${functionName}: Rate limit exceeded`);
     context.res.status = HttpStatusCode.TOO_MANY_REQUESTS;
-    return;
+    return true;
   }
+  await limiter.removeTokens(1);
+  return false;
 };

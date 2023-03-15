@@ -1,14 +1,15 @@
 import { AzureFunction, Context, HttpRequest } from "@azure/functions";
-import { handleOptions, rateLimit } from "../utils";
 
-import { sendResponse, HttpStatusCode } from "../utils";
+import { handleOptions, rateLimitExceeded, sendResponse, HttpStatusCode } from "../utils";
 
 const httpTrigger: AzureFunction = async function (
   context: Context,
   req: HttpRequest
 ): Promise<void> {
-  rateLimit(context);
-  handleOptions(context, req);
+  if (await rateLimitExceeded(context)) {
+    return;
+  }
+  await handleOptions(context, req);
 
   context.log.info("v1HeathCheck: Sending health check response");
 

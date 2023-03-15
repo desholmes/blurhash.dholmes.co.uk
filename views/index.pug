@@ -1,0 +1,78 @@
+doctype html
+html
+  head
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="content-type" content="text/html; charset=utf-8")
+
+    title blurhash | dholmes.co.uk
+
+    meta(name="description" content="Open Source API to encode and decode images using Azure Functions, TypeScript and the blurhash algorithm")
+    link(rel="canonical" href="https://blurhash.dholmes.co.uk")
+
+    //- Google fonts
+    link(rel="preconnect" href="https://fonts.googleapis.com")
+    link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+    link(rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600&display=swap")
+
+    link(rel="shortcut icon" href="/static/images/favicon.png")
+    link(rel="stylesheet" href="/static/styles/main.css")
+
+    //- Twitter
+    meta(name="twitter:card" content="summary")
+    meta(name="twitter:site" content="@whodadada")
+    meta(name="twitter:creator" content="@whodadada")
+    meta(property="twitter:description" content="Open Source API to encode and decode images using Azure Functions, TypeScript and the blurhash algorithm")
+    meta(property="twitter:image" content="https://blurhash.dholmes.co.uk/static/images/studio23-commissioned-artwork.jpg")
+
+    //- Open Graph
+    meta(property="og:locale" content="en")
+    meta(property="og:type" content="website")
+    meta(property="og:title" content="Blurhash encoding and decoding, Open Source API by Des Holmes | SaaS, DevOps and Azure")
+    meta(property="og:description" content="Open Source API to encode and decode images using Azure Functions, TypeScript and the blurhash algorithm")
+    meta(property="og:url" content="https://blurhash.dholmes.co.uk")
+    meta(property="og:site_name" content="Blurhash encoding and decoding, Open Source API by Des Holmes | SaaS, DevOps and Azure")
+    meta(property="og:image" content="https://blurhash.dholmes.co.uk/static/images/studio23-commissioned-artwork.jpg")
+    meta(property="og:image:width" content="1000")
+    meta(property="og:image:height" content="758")
+
+body
+  main
+    header
+      h1 BlurHash API: Azure Function in TypeScript
+    div(class="container")
+      h2 Intro
+      p 
+        a(href="https://github.com/desholmes/blurhash.dholmes.co.uk") This repo 
+        | contains an Open Source Azure Function using TypeScript to encode and decode images using the 
+        a(href="https://github.com/woltapp/blurhash") BlurHash algorithm.
+      p Reload the page and view the placeholder BlurHash image below.
+      p | Read the 
+        a(href="https://dholmes.co.uk/blog/open-source-azure-function-typescript-blurhash") blog post
+        |  for more information.
+      p 
+      div(class="image-container")
+        img(src="/static/images/studio23-commissioned-artwork.jpg" width="100%")
+      p Image courtesy of 
+        a(href="https://studio23.london") studio23.london
+        | .
+
+      h2 Using the API
+
+      h3 POST:
+        i /api/v1/blur-hash
+      | Encodes publicly accessible image to a BlurHash.
+      p Required body param:
+        ul 
+          li imageUrl
+
+      h3 GET:
+        i /api/v1/blur-hash 
+      | Decodes the BlurHash and returns a jpeg.
+      p Required URL params:
+        ul 
+          li blurhash
+          li width: Image width
+          li height: Image height
+      p 
+        a(href="/api/v1/blur-hash?blurhash=UrL;Nrxt?b-;%3WCofj@?vWVRjxu~poeozxu&width=1000&height=758" target="_blank") Example
+        |  as shown above.
