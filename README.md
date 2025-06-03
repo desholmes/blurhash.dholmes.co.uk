@@ -108,7 +108,7 @@ Used by monitoring to check system health.
 
 * [Des Holmes: Technical Leadership & Product Development](https://dholmes.co.uk/)
   * [About](https://dholmes.co.uk/) [Blog](https://dholmes.co.uk/blog/)
-  * **Skills & knowledge**: [Technical Leadership](https://dholmes.co.uk/tags/technical-leadership/), [Technical Direction](https://dholmes.co.uk/tags/technical-direction/), [Technical Delivery](https://dholmes.co.uk/tags/technical-delivery), [Product Development](https://dholmes.co.uk/tags/product-development/), [SaaS](https://dholmes.co.uk/tags/saas/), [DevOps](https://dholmes.co.uk/tags/devops/), [Azure Public Cloud](https://dholmes.co.uk/skills/)
+  * **Skills & knowledge**: [Technical Leadership](https://dholmes.co.uk/tags/technical-leadership/), [Technical Direction](https://dholmes.co.uk/tags/technical-direction/), [Technical Delivery](https://dholmes.co.uk/tags/technical-delivery/), [Product Development](https://dholmes.co.uk/tags/product-development/), [SaaS](https://dholmes.co.uk/tags/saas/), [DevOps](https://dholmes.co.uk/tags/devops/), [Azure Public Cloud](https://dholmes.co.uk/skills/)
   * **Job Titles**: [CTO](https://dholmes.co.uk/tags/cto/), [VP Engineering](https://dholmes.co.uk/tags/vp-engineering/), [Head of DevOps](https://dholmes.co.uk/tags/devops/), [Technical Product Owner](https://dholmes.co.uk/tags/technical-product-owner/)
   * **Example Projects**: [Development standards](https://dholmes.co.uk/tags/code-quality/), [DevOps](https://dholmes.co.uk/tags/devops), [CI/CD](https://dholmes.co.uk/tags/ci-cd/), [React](https://dholmes.co.uk/tags/react/), [docker](https://dholmes.co.uk/tags/docker/), [Cost Management](https://dholmes.co.uk/tags/costs/)
 * [woltapp/blurhash](https://github.com/woltapp/blurhash) algorithm
